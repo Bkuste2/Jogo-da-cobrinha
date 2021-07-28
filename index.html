@@ -1,36 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    
-    <script data-ad-client="ca-pub-3549801361900695" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <script data-ad-client="ca-pub-3549801361900695" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
 
     <title>Jogo da cobrinha</title>
 </head>
+
 <body style="background-color:rgb(2, 3, 27); color: #fff;">
-    <nav style="float: left; margin: 50px 50px;">  
-        Esperando Anúncio...
+
+    <nav style="float: left; margin: 50px 50px;">
+
+        <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3549801361900695"
+            crossorigin="anonymous"></script>
+        <!-- Anúncios Direita -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3549801361900695"
+            data-ad-slot="1492486705" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
     </nav>
+
     <div class="direita" style="float: right;  margin: 50px 50px;">
-        Esperando Anúncio...
+        <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3549801361900695"
+            crossorigin="anonymous"></script>
+        <!-- Anúncios esquerda -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3549801361900695"
+            data-ad-slot="4804405120" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
+
+    
     <center>
         <h1 style="font-family: 'Press Start 2P', cursive;">
             Jogo da cobrinha
         </h1>
 
         <canvas id="stage" width="550" height="550"></canvas>
-    
+
     </center>
 
     <script type="text/javascript">
-    
-        window.onload = function(){
+
+        window.onload = function () {
 
             var stage = document.getElementById('stage')
             var ctx = stage.getContext('2d')
@@ -46,47 +72,47 @@
             var qp = 20
             var ax = ay = 15
 
-            var trail = [ ]
+            var trail = []
             tail = 5
 
             function game() {
-              
+
                 px += vx
                 py += vy
-                if(px < 0 ){
+                if (px < 0) {
                     px = qp - 1
                 }
-                if(px > qp -1 ){
+                if (px > qp - 1) {
                     px = 0
                 }
-                if(py < 0 ){
+                if (py < 0) {
                     py = qp - 1
                 }
-                if(py> qp -1 ){
-                    py= 0
+                if (py > qp - 1) {
+                    py = 0
                 }
 
                 ctx.fillStyle = "black"
-                ctx.fillRect(0,0, stage.width, stage.height)
+                ctx.fillRect(0, 0, stage.width, stage.height)
                 ctx.fillStyle = "red"
-                ctx.fillRect(ax* tp, ay*tp, tp,tp)
+                ctx.fillRect(ax * tp, ay * tp, tp, tp)
                 ctx.fillStyle = "gray"
 
-                for(var i = 0; i < trail.length; i++){
-                    ctx.fillRect(trail[i].x*tp, trail[i].y*tp,tp-0.5,tp-0.5)
-                    if(trail[i].x == px && trail[i].y ==py){
+                for (var i = 0; i < trail.length; i++) {
+                    ctx.fillRect(trail[i].x * tp, trail[i].y * tp, tp - 0.5, tp - 0.5)
+                    if (trail[i].x == px && trail[i].y == py) {
                         vx = vy = 0
                         tail = 5
-                        
+
                     }
                 }
 
-                trail.push({x:px, y:py})  
+                trail.push({ x: px, y: py })
                 while (trail.length > tail) {
                     trail.shift()
                 }
 
-                if(ax == px && ay == py){
+                if (ax == px && ay == py) {
                     tail++
                     ax = Math.floor(Math.random() * qp)
                     ay = Math.floor(Math.random() * qp)
@@ -95,7 +121,7 @@
 
             }
 
-            function keyPush(event){
+            function keyPush(event) {
 
                 switch (event.keyCode) {
                     case 37: //left
@@ -114,7 +140,7 @@
                         vx = 0
                         vy = vel
                         break;
-                
+
                 }
 
             }
@@ -126,9 +152,10 @@
 
 
         }
-        
+
     </script>
 
 
 </body>
+
 </html>
