@@ -75,6 +75,10 @@
             var qp = 20
             var ax = ay = 15
 
+            // bug correction
+            var last_keyCode_event = 0;
+            //---------------------------
+
             var trail = []
             tail = 5
 
@@ -128,32 +132,35 @@
 
                 switch (event.keyCode) {
                     case 37: //left
-                        vx = -vel
-                        vy = 0
-                        break;
+                        if (event.keyCode != last_keyCode_event) {
+                            vx = -vel
+                            vy = 0
+                            last_keyCode_event = event.keyCode;
+                            break;
+                        }
                     case 38: //up
-                        vx = 0
-                        vy = -vel
-                        break;
+                        if (event.keyCode != last_keyCode_event) {
+                            vx = 0
+                            vy = -vel
+                            last_keyCode_event = event.keyCode;
+                            break;
+                        }
                     case 39: //right
-                        vx = vel
-                        vy = 0
-                        break;
+                        if (event.keyCode != last_keyCode_event) {
+                            vx = vel
+                            vy = 0
+                            last_keyCode_event = event.keyCode;
+                            break;
+                        }
                     case 40: //down
-                        vx = 0
-                        vy = vel
-                        break;
-
+                        if (event.keyCode != last_keyCode_event) {
+                            vx = 0
+                            vy = vel
+                            last_keyCode_event = event.keyCode;
+                            break;
+                        }
                 }
-
             }
-
-
-
-
-
-
-
         }
 
     </script>
