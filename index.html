@@ -35,7 +35,11 @@
 
     </nav>
 
-    <div class="direita" style="float: right;  margin: 50px 50px;">
+    <div class="direita" style="float: right;  margin: 50px 50px; text-align: center;">
+        
+        <div id="contador" style="border-radius: 10px; background-color: #fff; color: black; font-size: 30px; padding: 1rem;">5</div>
+
+
         <script async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3549801361900695"
             crossorigin="anonymous"></script>
@@ -64,6 +68,7 @@
             var stage = document.getElementById('stage')
             var ctx = stage.getContext('2d')
             document.addEventListener("keydown", keyPush)
+            let contador = document.getElementById('contador')
 
             setInterval(game, 60)
 
@@ -125,7 +130,8 @@
                     ay = Math.floor(Math.random() * qp)
                 }
 
-
+                
+                contador.innerHTML = `${tail}`
             }
 
             function keyPush(event) {
@@ -135,6 +141,7 @@
                         if (event.keyCode != last_keyCode_event) {
                             vx = -vel
                             vy = 0
+                            console.log("Arrow Left");
                             last_keyCode_event = event.keyCode;
                             break;
                         }
@@ -142,6 +149,7 @@
                         if (event.keyCode != last_keyCode_event) {
                             vx = 0
                             vy = -vel
+                            console.log("Arrow Up");
                             last_keyCode_event = event.keyCode;
                             break;
                         }
@@ -149,6 +157,7 @@
                         if (event.keyCode != last_keyCode_event) {
                             vx = vel
                             vy = 0
+                            console.log("Arrow Right");
                             last_keyCode_event = event.keyCode;
                             break;
                         }
@@ -156,6 +165,7 @@
                         if (event.keyCode != last_keyCode_event) {
                             vx = 0
                             vy = vel
+                            console.log("Arrow Down");
                             last_keyCode_event = event.keyCode;
                             break;
                         }
